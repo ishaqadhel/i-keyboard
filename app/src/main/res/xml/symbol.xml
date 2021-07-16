@@ -26,7 +26,7 @@
 
     <Row>
         <Key android:keyLabel="+" android:keyEdgeFlags="left" android:codes="43"/>
-        <Key android:keyLabel="x" android:codes=""/>
+        <Key android:keyLabel="x" android:codes="120"/>
         <Key android:keyLabel="±" android:codes="177"/>
         <Key android:keyLabel="=" android:codes="61"/>
         <Key android:keyLabel="/" android:codes="47"/>
@@ -63,7 +63,7 @@
     </Row>
 
     <Row android:rowEdgeFlags="bottom">
-        <Key android:keyLabel="/" android:keyWidth="10%p" android:keyEdgeFlags="left" android:codes="47"/>
+        <Key android:keyLabel="ABC" android:keyWidth="10%p" android:keyEdgeFlags="left" android:codes="-2"/>
         <Key android:keyLabel="," android:keyWidth="20%p" android:codes="44"/>
         <Key android:keyLabel="SPACE" android:keyWidth="40%p" android:isRepeatable="true" android:codes="32"/>
         <Key android:keyLabel="." android:keyWidth="20%p" android:codes="46"/>
