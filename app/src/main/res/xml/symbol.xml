@@ -6,9 +6,10 @@
     android:keyHeight="60dp">
 
     <Row>
-        <Key android:keyLabel="Invoice" android:keyWidth="40%p" android:keyEdgeFlags="left" />
-        <Key android:keyLabel="Ongkir" android:keyWidth="40%p" />
-        <Key android:keyLabel="Dashboard" android:keyWidth="40%p" android:keyEdgeFlags="right" />
+        <Key android:keyLabel="Invoice" android:keyWidth="25%p" android:keyEdgeFlags="left"/>
+        <Key android:keyLabel="Ongkir" android:keyWidth="25%p" />
+        <Key android:keyLabel="Laporan" android:keyWidth="25%p" />
+        <Key android:keyLabel="Dashboard" android:keyWidth="25%p" android:keyEdgeFlags="right" />
     </Row>
 
     <Row>
@@ -39,7 +40,7 @@
 
     <Row>
         <Key android:keyLabel="!" android:keyEdgeFlags="left" android:codes="33"/>
-        <Key android:keyLabel="at" android:codes="64"/>
+        <Key android:keyLabel="@" android:codes="64"/>
         <Key android:keyLabel="#" android:codes="35"/>
         <Key android:keyLabel="$" android:codes="36"/>
         <Key android:keyLabel="%" android:codes="37"/>
@@ -51,7 +52,7 @@
     </Row>
 
     <Row>
-        <Key android:keyLabel="CAPS" android:keyEdgeFlags="left" android:codes="-1"/>
+        <Key android:keyLabel="1/2" android:keyWidth="15%p" android:keyEdgeFlags="left" android:codes="-2"/>
         <Key android:keyLabel="-" android:codes="45"/>
         <Key android:keyLabel="'" android:codes="96"/>
         <Key android:keyLabel="''" android:codes="34"/>
@@ -59,14 +60,14 @@
         <Key android:keyLabel=";" android:codes="59"/>
         <Key android:keyLabel="," android:codes="44"/>
         <Key android:keyLabel="\?" android:codes="63"/>
-        <Key android:keyLabel="DEL" android:keyWidth="20%p" android:isRepeatable="true" android:codes="-5"/>
+        <Key android:keyLabel="DEL" android:keyEdgeFlags="right"  android:keyWidth="15%p" android:isRepeatable="true" android:codes="-5"/>
     </Row>
 
     <Row android:rowEdgeFlags="bottom">
-        <Key android:keyLabel="ABC" android:keyWidth="10%p" android:keyEdgeFlags="left" android:codes="-2"/>
-        <Key android:keyLabel="," android:keyWidth="20%p" android:codes="44"/>
+        <Key android:keyLabel="ABC" android:keyWidth="20%p" android:keyEdgeFlags="left" android:codes="-2"/>
+        <Key android:keyLabel="," android:keyWidth="10%p" android:codes="44"/>
         <Key android:keyLabel="SPACE" android:keyWidth="40%p" android:isRepeatable="true" android:codes="32"/>
-        <Key android:keyLabel="." android:keyWidth="20%p" android:codes="46"/>
+        <Key android:keyLabel="." android:keyWidth="10%p" android:codes="46"/>
         <Key android:keyLabel="DONE" android:keyWidth="20%p" android:keyEdgeFlags="right" android:codes="-4"/>
     </Row>
 </Keyboard>

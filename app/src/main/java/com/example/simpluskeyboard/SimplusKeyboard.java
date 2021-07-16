@@ -17,6 +17,7 @@ public class SimplusKeyboard extends InputMethodService implements KeyboardView.
     private Keyboard keyboard;
 
     private boolean isCaps = false;
+    private boolean isSymbol = false;
 
     @Override
     public View onCreateInputView() {
@@ -53,6 +54,16 @@ public class SimplusKeyboard extends InputMethodService implements KeyboardView.
                 break;
             case Keyboard.KEYCODE_DONE:
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                break;
+            case Keyboard.KEYCODE_MODE_CHANGE:
+                if (!isSymbol) {
+                    keyboard = new Keyboard(this, R.xml.symbol);
+                    kv.setKeyboard(keyboard);
+                } else {
+                    keyboard = new Keyboard(this, R.xml.qwerty);
+                    kv.setKeyboard(keyboard);
+                }
+                isSymbol = !isSymbol;
                 break;
             default:
                 char code = (char)i;
