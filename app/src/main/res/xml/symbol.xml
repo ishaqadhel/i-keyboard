@@ -52,7 +52,7 @@
     </Row>
 
     <Row>
-        <Key android:keyLabel="1/2" android:keyWidth="15%p" android:keyEdgeFlags="left" android:codes="-2"/>
+        <Key android:keyLabel="1/2" android:keyWidth="15%p" android:keyEdgeFlags="left" android:codes="-7"/>
         <Key android:keyLabel="-" android:codes="45"/>
         <Key android:keyLabel="'" android:codes="96"/>
         <Key android:keyLabel="''" android:codes="34"/>
