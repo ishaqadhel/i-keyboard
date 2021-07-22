@@ -63,6 +63,7 @@ public class SimplusKeyboard extends InputMethodService implements KeyboardView.
                 } else {
                     keyboard = new Keyboard(this, R.xml.qwerty);
                     kv.setKeyboard(keyboard);
+                    isSymbolExtra = false;
                 }
                 isSymbol = !isSymbol;
                 break;
