@@ -6,13 +6,6 @@
     android:keyHeight="60dp">
 
     <Row>
-        <Key android:keyLabel="Invoice" android:keyWidth="25%p" android:keyEdgeFlags="left"/>
-        <Key android:keyLabel="Ongkir" android:keyWidth="25%p" />
-        <Key android:keyLabel="Laporan" android:keyWidth="25%p" />
-        <Key android:keyLabel="Dashboard" android:keyWidth="25%p" android:keyEdgeFlags="right" />
-    </Row>
-
-    <Row>
         <Key android:keyLabel="1" android:keyEdgeFlags="left" android:codes="49"/>
         <Key android:keyLabel="2" android:codes="50"/>
         <Key android:keyLabel="3" android:codes="51"/>
