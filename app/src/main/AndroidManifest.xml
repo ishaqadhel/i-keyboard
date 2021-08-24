@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.simpluskeyboard">
+    package="com.example.ikeyboard">
 
     <application
         android:allowBackup="true"
@@ -8,10 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SimplusKeyboard">
+        android:theme="@style/Theme.IKeyboard">
         <service
-            android:name=".SimplusKeyboard"
-            android:label="SimplusKeyboard"
+            android:name="com.example.ikeyboard.MainKeyboard"
+            android:label="iKeyboard"
             android:permission="android.permission.BIND_INPUT_METHOD">
                 <meta-data android:name="android.view.im" android:resource="@xml/method"/>
             <intent-filter>

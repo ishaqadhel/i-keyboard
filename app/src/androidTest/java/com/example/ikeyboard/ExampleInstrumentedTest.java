@@ -1,4 +1,4 @@
-package com.example.simpluskeyboard;
+package com.example.ikeyboard;
 
 import android.content.Context;
 
