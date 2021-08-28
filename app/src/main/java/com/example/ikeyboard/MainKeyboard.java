@@ -6,6 +6,7 @@ import android.inputmethodservice.KeyboardView;
 import android.media.AudioManager;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 
 public class MainKeyboard extends InputMethodService implements KeyboardView.OnKeyboardActionListener {
@@ -27,13 +28,27 @@ public class MainKeyboard extends InputMethodService implements KeyboardView.OnK
     }
 
     @Override
-    public void onPress(int primaryCode) {
-
+    public void onPress(int i) {
+        InputConnection ic = getCurrentInputConnection();
+        if (i == Keyboard.KEYCODE_DONE) {
+            final int options = this.getCurrentInputEditorInfo().imeOptions;
+            final int actionId = options & EditorInfo.IME_MASK_ACTION;
+            switch (actionId) {
+                case EditorInfo.IME_ACTION_NEXT:
+                    sendDefaultEditorAction(true);
+                    break;
+                default:
+                    ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+            }
+        }
     }
 
     @Override
-    public void onRelease(int primaryCode) {
-
+    public void onRelease(int i) {
+        InputConnection ic = getCurrentInputConnection();
+        if (i == Keyboard.KEYCODE_DONE) {
+            ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
+        }
     }
 
     @Override
@@ -51,7 +66,6 @@ public class MainKeyboard extends InputMethodService implements KeyboardView.OnK
                 kv.invalidateAllKeys();
                 break;
             case Keyboard.KEYCODE_DONE:
-                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
             case Keyboard.KEYCODE_MODE_CHANGE:
                 if (!isSymbol) {
