@@ -12,7 +12,10 @@ import android.view.inputmethod.InputConnection;
 public class MainKeyboard extends InputMethodService implements KeyboardView.OnKeyboardActionListener {
 
     private KeyboardView kv;
-    private Keyboard keyboard;
+    private Keyboard qwertyKeyboard;
+    private Keyboard extraKeyboard;
+    private Keyboard symbolKeyboard;
+    private Keyboard numpadKeyboard;
 
     private boolean isCaps = false;
     private boolean isSymbol = false;
@@ -22,8 +25,11 @@ public class MainKeyboard extends InputMethodService implements KeyboardView.OnK
     @Override
     public View onCreateInputView() {
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
-        keyboard = new Keyboard(this, R.xml.qwerty);
-        kv.setKeyboard(keyboard);
+        qwertyKeyboard = new Keyboard(this, R.xml.qwerty);
+        symbolKeyboard = new Keyboard(this, R.xml.symbol);
+        extraKeyboard = new Keyboard(this, R.xml.symbolextra);
+        numpadKeyboard = new Keyboard(this, R.xml.numpad);
+        kv.setKeyboard(qwertyKeyboard);
         kv.setOnKeyboardActionListener(this);
         return kv;
     }
@@ -63,36 +69,31 @@ public class MainKeyboard extends InputMethodService implements KeyboardView.OnK
                 break;
             case Keyboard.KEYCODE_SHIFT:
                 isCaps = !isCaps;
-                keyboard.setShifted(isCaps);
+                qwertyKeyboard.setShifted(isCaps);
                 kv.invalidateAllKeys();
                 break;
             case Keyboard.KEYCODE_DONE:
                 break;
             case Keyboard.KEYCODE_MODE_CHANGE:
                 if (!isSymbol) {
-                    keyboard = new Keyboard(this, R.xml.symbol);
-                    kv.setKeyboard(keyboard);
+                    kv.setKeyboard(symbolKeyboard);
                 } else {
-                    keyboard = new Keyboard(this, R.xml.qwerty);
-                    kv.setKeyboard(keyboard);
+                    kv.setKeyboard(qwertyKeyboard);
                     isSymbolExtra = false;
                 }
                 isSymbol = !isSymbol;
                 break;
             case -7:
                 if (!isSymbolExtra) {
-                    keyboard = new Keyboard(this, R.xml.symbolextra);
-                    kv.setKeyboard(keyboard);
+                    kv.setKeyboard(extraKeyboard);
                 } else {
-                    keyboard = new Keyboard(this, R.xml.symbol);
-                    kv.setKeyboard(keyboard);
+                    kv.setKeyboard(symbolKeyboard);
                 }
                 isSymbolExtra = !isSymbolExtra;
                 break;
             case -8:
                 isNumpad = !isNumpad;
-                keyboard = new Keyboard(this, R.xml.numpad);
-                kv.setKeyboard(keyboard);
+                kv.setKeyboard(numpadKeyboard);
                 isSymbolExtra = false;
             default:
                 char code = (char)i;
