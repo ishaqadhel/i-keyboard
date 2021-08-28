@@ -17,6 +17,7 @@ public class MainKeyboard extends InputMethodService implements KeyboardView.OnK
     private boolean isCaps = false;
     private boolean isSymbol = false;
     private boolean isSymbolExtra = false;
+    private boolean isNumpad = false;
 
     @Override
     public View onCreateInputView() {
@@ -88,6 +89,11 @@ public class MainKeyboard extends InputMethodService implements KeyboardView.OnK
                 }
                 isSymbolExtra = !isSymbolExtra;
                 break;
+            case -8:
+                isNumpad = !isNumpad;
+                keyboard = new Keyboard(this, R.xml.numpad);
+                kv.setKeyboard(keyboard);
+                isSymbolExtra = false;
             default:
                 char code = (char)i;
                 if (Character.isLetter(code) && isCaps)

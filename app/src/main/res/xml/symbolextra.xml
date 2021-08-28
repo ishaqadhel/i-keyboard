@@ -46,7 +46,8 @@
     <Row android:rowEdgeFlags="bottom">
         <Key android:keyLabel="ABC" android:keyWidth="20%p" android:keyEdgeFlags="left" android:codes="-2"/>
         <Key android:keyLabel="&lt;" android:keyWidth="10%p" android:codes="60"/>
-        <Key android:keyIcon="@drawable/keyboard_sym_space" android:keyWidth="40%p" android:isRepeatable="true" android:codes="32"/>
+        <Key android:keyIcon="@drawable/keyboard_sym_numpad" android:keyWidth="10%p" android:codes="-8"/>
+        <Key android:keyIcon="@drawable/keyboard_sym_space" android:keyWidth="30%p" android:isRepeatable="true" android:codes="32"/>
         <Key android:keyLabel="&gt;" android:keyWidth="10%p" android:codes="62"/>
         <Key android:keyIcon="@drawable/keyboard_sym_return" android:keyWidth="20%p" android:keyEdgeFlags="right" android:codes="-4"/>
     </Row>
